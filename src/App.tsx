@@ -5,6 +5,7 @@ import { Dashboard } from './components/dashboard/Dashboard';
 import { Modal } from './components/ui/Modal';
 import { TransactionForm } from './components/transactions/TransactionForm';
 import { TransactionList } from './components/transactions/TransactionList';
+import { FilterBar } from './components/filters/FilterBar';
 
 function AppContent() {
   const context = useContext(AppContext);
@@ -46,6 +47,7 @@ function AppContent() {
       
       <main className="app-main">
         <Dashboard />
+        <FilterBar />
         <TransactionList />
       </main>
 
