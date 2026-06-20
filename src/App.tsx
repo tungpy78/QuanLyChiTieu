@@ -6,6 +6,7 @@ import { Modal } from './components/ui/Modal';
 import { TransactionForm } from './components/transactions/TransactionForm';
 import { TransactionList } from './components/transactions/TransactionList';
 import { FilterBar } from './components/filters/FilterBar';
+import { CategoryManager } from './components/categories/CategoryManager';
 
 function AppContent() {
   const context = useContext(AppContext);
@@ -31,6 +32,20 @@ function AppContent() {
     }));
   };
 
+  const handleOpenCategoryManager = () => {
+    setUiState((prev) => ({
+      ...prev,
+      isCategoryManagerOpen: true,
+    }));
+  };
+
+  const handleCloseCategoryManager = () => {
+    setUiState((prev) => ({
+      ...prev,
+      isCategoryManagerOpen: false,
+    }));
+  };
+
   return (
     <>
       <header className="app-header">
@@ -39,6 +54,9 @@ function AppContent() {
           <p className="subtitle">Theo dõi và quản lý dòng tiền của bạn một cách khoa học</p>
         </div>
         <div className="header-actions">
+          <button className="btn btn-secondary btn-manage-cats" onClick={handleOpenCategoryManager}>
+            Quản lý danh mục
+          </button>
           <button className="btn btn-primary btn-add" onClick={handleOpenAddForm}>
             + Thêm giao dịch
           </button>
@@ -55,12 +73,22 @@ function AppContent() {
         <p>Personal Expense Tracker &copy; 2026</p>
       </footer>
 
+      {/* Modal Thêm/Sửa giao dịch */}
       <Modal
         isOpen={uiState.isFormOpen}
         onClose={handleCloseForm}
         title={uiState.editingTransactionId ? 'Sửa giao dịch' : 'Thêm giao dịch mới'}
       >
         <TransactionForm />
+      </Modal>
+
+      {/* Modal Quản lý danh mục */}
+      <Modal
+        isOpen={uiState.isCategoryManagerOpen}
+        onClose={handleCloseCategoryManager}
+        title="Quản lý danh mục"
+      >
+        <CategoryManager />
       </Modal>
     </>
   );
