@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-import './App.css';
 import { AppProvider, AppContext } from './context/AppContext';
 import { Dashboard } from './components/dashboard/Dashboard';
 import { Modal } from './components/ui/Modal';
