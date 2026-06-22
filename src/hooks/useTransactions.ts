@@ -1,7 +1,7 @@
 import { useContext, useMemo } from 'react';
 import { AppContext } from '../context/AppContext';
 import { filterTransactions } from '../utils/filterTransactions';
-import type { Transaction } from '../types';
+import type { Transaction } from '../modules/transactions/types/transaction.type';
 
 /**
  * Custom hook to interact with transactions and compute summary/filters.

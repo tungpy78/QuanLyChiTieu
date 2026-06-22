@@ -35,7 +35,7 @@ export const Modals: React.FC = () => {
         onClose={handleCloseForm}
         title={uiState.editingTransactionId ? 'Sửa giao dịch' : 'Thêm giao dịch mới'}
       >
-        <TransactionForm />
+        <TransactionForm key={uiState.editingTransactionId || 'new'} />
       </Modal>
 
       {/* Modal Quản lý danh mục */}

@@ -1,21 +1,10 @@
-import React, { createContext, useReducer, useState, useEffect } from 'react';
-import type { Transaction, Category, FilterState, UIState } from '../types';
-import { transactionReducer, type TransactionAction } from '../reducers/transactionReducer';
-import { categoryReducer, type CategoryAction } from '../reducers/categoryReducer';
+import React, { useReducer, useState, useEffect } from 'react';
+import type { FilterState } from '../modules/transactions/types/transaction.type';
+import type { UIState } from './app-context.type';
+import { transactionReducer } from '../reducers/transactionReducer';
+import { categoryReducer } from '../reducers/categoryReducer';
 import { DEFAULT_CATEGORIES } from '../constants';
-
-export interface AppContextType {
-  transactions: Transaction[];
-  dispatchTransactions: React.Dispatch<TransactionAction>;
-  categories: Category[];
-  dispatchCategories: React.Dispatch<CategoryAction>;
-  filters: FilterState;
-  setFilters: React.Dispatch<React.SetStateAction<FilterState>>;
-  uiState: UIState;
-  setUiState: React.Dispatch<React.SetStateAction<UIState>>;
-}
-
-export const AppContext = createContext<AppContextType | undefined>(undefined);
+import { AppContext } from './AppContext';
 
 const initialFilters: FilterState = {
   searchText: '',

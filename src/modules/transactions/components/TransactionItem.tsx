@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Transaction } from '../../../types';
+import type { Transaction } from '../types/transaction.type';
 import { useCategories } from '../../../hooks/useCategories';
 import { formatCurrency } from '../../../utils/formatCurrency';
 import { formatDate } from '../../../utils/formatDate';

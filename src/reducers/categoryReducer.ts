@@ -1,4 +1,4 @@
-import type { Category } from '../types';
+import type { Category } from '../modules/categories/types/category.type';
 
 export type CategoryAction =
   | { type: 'ADD_CATEGORY'; payload: Category }

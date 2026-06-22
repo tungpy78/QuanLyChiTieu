@@ -1,4 +1,4 @@
-import type { Category } from '../types';
+import type { Category } from '../modules/categories/types/category.type';
 
 export const DEFAULT_CATEGORIES: Category[] = [
   { id: 'cat-food', name: 'Ăn uống', isDefault: true },

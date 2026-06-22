@@ -1,4 +1,4 @@
-import type { Transaction, FilterState } from '../types';
+import type { Transaction, FilterState } from '../modules/transactions/types/transaction.type';
 
 /**
  * Filters and sorts transactions based on the filter criteria.

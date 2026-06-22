@@ -1,4 +1,4 @@
-import type { Transaction } from '../types';
+import type { Transaction } from '../modules/transactions/types/transaction.type';
 
 export type TransactionAction =
   | { type: 'ADD_TRANSACTION'; payload: Transaction }

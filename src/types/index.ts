@@ -1,35 +1,14 @@
-export type TransactionType = 'income' | 'expense';
+export type {
+  Transaction,
+  TransactionType,
+  FilterState,
+  SortOrder,
+} from '../modules/transactions/types/transaction.type';
 
-export interface Transaction {
-  id: string;
-  name: string;
-  type: TransactionType;
-  amount: number; // Always positive (> 0)
-  categoryId: string;
-  date: string; // ISO date string "YYYY-MM-DD"
-  note: string;
-  createdAt: string; // ISO timestamp "YYYY-MM-DDTHH:mm:ss.sssZ" for absolute sorting
-}
+export type {
+  Category,
+} from '../modules/categories/types/category.type';
 
-export interface Category {
-  id: string;
-  name: string;
-  isDefault: boolean;
-}
-
-export type SortOrder = 'newest' | 'oldest';
-
-export interface FilterState {
-  searchText: string;
-  type: 'all' | TransactionType;
-  categoryId: string; // Empty string means "All"
-  dateFrom: string; // YYYY-MM-DD or empty string
-  dateTo: string; // YYYY-MM-DD or empty string
-  sortOrder: SortOrder;
-}
-
-export interface UIState {
-  isFormOpen: boolean;
-  editingTransactionId: string | null;
-  isCategoryManagerOpen: boolean;
-}
+export type {
+  UIState,
+} from '../context/app-context.type';

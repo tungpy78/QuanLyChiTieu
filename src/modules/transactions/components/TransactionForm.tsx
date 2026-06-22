@@ -1,10 +1,10 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
 import { AppContext } from '../../../context/AppContext';
 import { useTransactions } from '../../../hooks/useTransactions';
 import { useCategories } from '../../../hooks/useCategories';
 import { Input } from '../../../components/common/Input';
 import { Button } from '../../../components/common/Button';
-import type { TransactionType } from '../../../types';
+import type { TransactionType } from '../types/transaction.type';
 
 interface FormErrors {
   name?: string;
@@ -30,15 +30,6 @@ export const TransactionForm: React.FC = () => {
     ? transactions.find((t) => t.id === editingTransactionId)
     : null;
 
-  // Form states
-  const [name, setName] = useState('');
-  const [type, setType] = useState<TransactionType | ''>('');
-  const [amount, setAmount] = useState('');
-  const [categoryId, setCategoryId] = useState('');
-  const [date, setDate] = useState('');
-  const [note, setNote] = useState('');
-  const [errors, setErrors] = useState<FormErrors>({});
-
   // Helper to generate today's date in local YYYY-MM-DD
   const getTodayDateString = () => {
     const today = new Date();
@@ -48,26 +39,14 @@ export const TransactionForm: React.FC = () => {
     return `${year}-${month}-${day}`;
   };
 
-  // Sync state with editingTransaction changes
-  useEffect(() => {
-    if (editingTransaction) {
-      setName(editingTransaction.name);
-      setType(editingTransaction.type);
-      setAmount(editingTransaction.amount.toString());
-      setCategoryId(editingTransaction.categoryId);
-      setDate(editingTransaction.date);
-      setNote(editingTransaction.note);
-      setErrors({});
-    } else {
-      setName('');
-      setType('');
-      setAmount('');
-      setCategoryId('');
-      setDate(getTodayDateString());
-      setNote('');
-      setErrors({});
-    }
-  }, [editingTransactionId, editingTransaction]);
+  // Form states
+  const [name, setName] = useState(editingTransaction ? editingTransaction.name : '');
+  const [type, setType] = useState<TransactionType | ''>(editingTransaction ? editingTransaction.type : '');
+  const [amount, setAmount] = useState(editingTransaction ? editingTransaction.amount.toString() : '');
+  const [categoryId, setCategoryId] = useState(editingTransaction ? editingTransaction.categoryId : '');
+  const [date, setDate] = useState(editingTransaction ? editingTransaction.date : getTodayDateString());
+  const [note, setNote] = useState(editingTransaction ? editingTransaction.note : '');
+  const [errors, setErrors] = useState<FormErrors>({});
 
   // Form Validation logic
   const validate = (): boolean => {

@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
-import type { Category } from '../types';
+import type { Category } from '../modules/categories/types/category.type';
 
 /**
  * Custom hook to interact with category state.
