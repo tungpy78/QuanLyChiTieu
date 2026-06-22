@@ -1,10 +1,10 @@
 import { AppProvider } from './context/AppContext';
-import { AppShell } from './components/layout/AppShell';
+import { HomePage } from './pages/HomePage';
 
 function App() {
   return (
     <AppProvider>
-      <AppShell />
+      <HomePage />
     </AppProvider>
   );
 }

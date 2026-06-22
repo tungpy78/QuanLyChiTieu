@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
-import { Modal } from '../ui/Modal';
-import { TransactionForm } from '../transactions/TransactionForm';
-import { CategoryManager } from '../categories/CategoryManager';
+import { Modal } from '../common/Modal';
+import { TransactionForm } from '../../modules/transactions/components/TransactionForm';
+import { CategoryView } from '../../modules/categories/views/CategoryView';
 
-export const AppModals: React.FC = () => {
+export const Modals: React.FC = () => {
   const context = useContext(AppContext);
   if (!context) {
     return null;
@@ -44,7 +44,7 @@ export const AppModals: React.FC = () => {
         onClose={handleCloseCategoryManager}
         title="Quản lý danh mục"
       >
-        <CategoryManager />
+        <CategoryView />
       </Modal>
     </>
   );

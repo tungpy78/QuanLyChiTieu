@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
 
-export const AppHeader: React.FC = () => {
+export const Header: React.FC = () => {
   const context = useContext(AppContext);
   if (!context) {
     return null;

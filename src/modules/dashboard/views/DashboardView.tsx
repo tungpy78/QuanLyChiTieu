@@ -1,9 +1,9 @@
 import React from 'react';
-import { useTransactions } from '../../hooks/useTransactions';
-import { SummaryCard } from './SummaryCard';
-import { formatCurrency } from '../../utils/formatCurrency';
+import { useTransactions } from '../../../hooks/useTransactions';
+import { SummaryCard } from '../components/SummaryCard';
+import { formatCurrency } from '../../../utils/formatCurrency';
 
-export const Dashboard: React.FC = () => {
+export const DashboardView: React.FC = () => {
   const { summary } = useTransactions();
 
   return (

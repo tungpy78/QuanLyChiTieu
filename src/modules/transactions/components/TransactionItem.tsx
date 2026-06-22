@@ -1,9 +1,9 @@
 import React from 'react';
-import type { Transaction } from '../../types';
-import { useCategories } from '../../hooks/useCategories';
-import { formatCurrency } from '../../utils/formatCurrency';
-import { formatDate } from '../../utils/formatDate';
-import { Button } from '../ui/Button';
+import type { Transaction } from '../../../types';
+import { useCategories } from '../../../hooks/useCategories';
+import { formatCurrency } from '../../../utils/formatCurrency';
+import { formatDate } from '../../../utils/formatDate';
+import { Button } from '../../../components/common/Button';
 
 interface TransactionItemProps {
   transaction: Transaction;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useCategories } from '../../hooks/useCategories';
-import { Input } from '../ui/Input';
-import { Button } from '../ui/Button';
+import { useCategories } from '../../../hooks/useCategories';
+import { Input } from '../../../components/common/Input';
+import { Button } from '../../../components/common/Button';
 
 export const CategoryManager: React.FC = () => {
   const { categories, addCategory, deleteCategory, isCategoryInUse } = useCategories();

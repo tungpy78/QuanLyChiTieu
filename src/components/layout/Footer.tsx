@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const AppFooter: React.FC = () => {
+export const Footer: React.FC = () => {
   return (
     <footer className="app-footer">
       <p>Personal Expense Tracker &copy; 2026</p>

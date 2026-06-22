@@ -1,10 +1,10 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { AppContext } from '../../context/AppContext';
-import { useTransactions } from '../../hooks/useTransactions';
-import { useCategories } from '../../hooks/useCategories';
-import { Input } from '../ui/Input';
-import { Button } from '../ui/Button';
-import type { TransactionType } from '../../types';
+import { AppContext } from '../../../context/AppContext';
+import { useTransactions } from '../../../hooks/useTransactions';
+import { useCategories } from '../../../hooks/useCategories';
+import { Input } from '../../../components/common/Input';
+import { Button } from '../../../components/common/Button';
+import type { TransactionType } from '../../../types';
 
 interface FormErrors {
   name?: string;

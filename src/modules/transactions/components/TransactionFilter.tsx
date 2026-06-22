@@ -1,9 +1,9 @@
 import React from 'react';
-import { useTransactions } from '../../hooks/useTransactions';
-import { useCategories } from '../../hooks/useCategories';
-import { Button } from '../ui/Button';
+import { useTransactions } from '../../../hooks/useTransactions';
+import { useCategories } from '../../../hooks/useCategories';
+import { Button } from '../../../components/common/Button';
 
-export const FilterBar: React.FC = () => {
+export const TransactionFilter: React.FC = () => {
   const { filters, setFilters } = useTransactions();
   const { categories } = useCategories();
 
